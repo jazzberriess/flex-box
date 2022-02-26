@@ -12,6 +12,8 @@
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
@@ -21,12 +23,18 @@ html {
 
 header {
     text-align: center;
-    margin-bottom: 6%;
+    /* margin-bottom: 6%; */
     color: var(--aqua);
+    margin: 2rem;
+    padding: 2rem;
 }
 
 header h1{
-    font-size: 3rem;
+    font-size: 3.5rem;
+}
+
+header p {
+    margin-top: 2rem;
 }
 
 body {
@@ -36,10 +44,24 @@ body {
     line-height: 1.5rem;
 }
 
+p {
+    line-height: 2rem;
+    margin: 0.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
 /* set the flex for the entire page that encloses the individual flex containers */
 
 section.contents {
-    /* Just so I can see the bounding edges - border: 1px solid yellow; */
+    /* Just so I can see the bounding edges -  */
+    /* border: 1px solid yellow; */
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -49,9 +71,10 @@ section.contents {
 }
 
 div.bounding-box {
-    /* Just so I can see the bounding edges - border: 2px solid cyan; */
+    /* Just so I can see the bounding edges - */
+    /* border: 2px solid cyan; */
     flex: 1 0 100%;
-    /* max-height: 100%; */
+    max-height: 100%;
     margin-bottom: 4rem;
     width: 100%;
 }
@@ -63,6 +86,11 @@ div.card-container {
     border-radius: 2px;
     margin: 1rem;
     min-height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 0 100%;
+    flex-direction: column;
+
 }
 
 /* card titles */
@@ -71,17 +99,29 @@ div.card-header {
     border: 1px solid var(--white);
     background-color: #333337;
     border-radius: 8px;
+    height: fit-content;
+    /* flex: 0 0 75%; */
     width: 75%;
-    margin-top: -3.5rem;
-    margin-left: 3rem;
-    padding-left: 5%;
-    padding-right: 5%;
+    margin-top: -1.5rem;
+    margin-left: 3.6rem;
+    padding: 0.5rem;
+    /* min-height: 100%; */
+   
 }
 
 /* set the hover and transition in/out for the container and header*/
 
-div.card-container:hover, 
+/* div.card-container:hover,  
 div.card-header:hover {
+    box-shadow: inset 0px 0px 8px
+    rgb(38, 241, 255), 0 0 15px
+    rgba(38, 241, 255, 1);
+    border-radius: 10px;
+    transition: all 3s ease-in-out;
+} */
+
+div.card-container:hover,  
+div.card-container:hover div.card-header {
     box-shadow: inset 0px 0px 8px
     rgb(38, 241, 255), 0 0 15px
     rgba(38, 241, 255, 1);
@@ -91,24 +131,40 @@ div.card-header:hover {
 
 /* stying for the individual cards - the stuff INSIDE the indivudal flex containers*/
 
-div.card {
-    padding-left: 5%;
-    padding-right: 5%;
+/* div.card {
+    padding-top: 0.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 1rem;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    flex: 1;
+    flex: 1 0 100%;
+    min-height: 100%;
 
-}
+} */
+
+/* div.card p {
+    margin: 1rem;
+} */
 
 /* styling for code snippets */
 
-pre {
-    /* Just so I can see the bounding edges - border: 2px solid hotpink; */
+pre.code-snippet {
+    /* Just so I can see the bounding edges -  */
+    /* border: 2px solid hotpink; */
     background: linear-gradient(#333284, #000000);
+    font-family: monospace;
     color:aliceblue;
     border-radius: 3px;
-    flex: 1;
+    margin: 1rem;
+    display:flex;
+    flex-direction: row;
+    flex: 1 0 90%;
     align-items: center;
+    /* min-height: 300px; */
+    /* flex: 1;
+    align-items: space-evenly; */
     
 /* thank you stackoverflow for this soulution to wrap the code snippet within its container */
         white-space: pre-wrap;
@@ -118,8 +174,7 @@ pre {
 
 footer {
     text-align: center;
-    margin-top: 3rem;
-    margin-bottom: 2rem;
+    padding: 2rem;
     color:var(--aqua);
 }
 
