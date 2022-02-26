@@ -1,0 +1,132 @@
+:root {
+    --white: rgb(255,255,255);
+    --aqua: rgb(0,255,255);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 14px;
+    font-family: sans-serif;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 6%;
+    color: var(--aqua);
+}
+
+header h1{
+    font-size: 3rem;
+}
+
+body {
+    background-color: #333337;
+    color: rgb(0,191,255);
+    margin: 0;
+}
+
+/* set the flex for the entire page that encloses the individual flex containers */
+
+section.contents {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+}
+
+/* Individual flex containers for each card */
+
+div.card-container {
+    border: 2px dashed var(--white);
+    position: relative;
+    flex: 1 0 100%;
+    width: 100%;
+    border-radius: 2px;
+    padding: 1rem;
+    height: auto;
+}
+
+/* card titles */
+
+div.card-header {
+    border: 1px solid var(--white);
+    background-color: #333337;
+    border-radius: 8px;
+    width: 75%;
+    position:absolute;
+    margin-top: -3.5rem;
+    margin-left: 3rem;
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: center;
+}
+
+/* set the hover and transition in/out for the container and header*/
+
+div.card-container:hover, 
+div.card-header:hover {
+    box-shadow: inset 0px 0px 8px
+    rgb(38, 241, 255), 0 0 15px
+    rgba(38, 241, 255, 1);
+    border-radius: 10px;
+    transition: all 3s ease-in-out;
+}
+
+/* stying for the individual cards - the stuff INSIDE the indivudal flex containers*/
+
+div.card {
+    border-style: solid 2px;
+    padding-left: 5%;
+    padding-right: 5%;
+
+}
+
+div.card p {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+
+/* styling for code snippets */
+
+pre {
+    background: linear-gradient(#333284, #000000);
+    color:aliceblue;
+    border-radius: 3px;
+    max-height: 300px;
+/* thank you stackoverflow for this soulution to wrap the code snippet within its container */
+        white-space: pre-wrap;
+        word-break: keep-all;
+}
+
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    color:var(--aqua);
+}
+
+/* Make the website responsive for smaller screens with a media query */
+
+@media screen and (min-width: 768px){
+    .card-container{
+        flex-grow: 1;
+        flex-shrink: 0;
+         flex-basis: 50%;
+         max-width: 50%
+    }
+} 
+
+@media screen and (min-width: 992px){
+
+    .card-container{
+        flex-grow: 1;
+        flex-shrink: 0;
+        flex-basis: 33%;
+        max-width: 33%
+    }
+} 
