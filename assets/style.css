@@ -60,8 +60,7 @@ h3 {
 /* set the flex for the entire page that encloses the individual flex containers */
 
 section.contents {
-    /* Just so I can see the bounding edges -  */
-    /* border: 1px solid yellow; */
+    /* Just so I can see the bounding edges - border: 1px solid yellow; */
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -69,6 +68,8 @@ section.contents {
     align-items: stretch;
     
 }
+
+/* Individual flex containers for each card */
 
 div.bounding-box {
     /* Just so I can see the bounding edges - */
@@ -79,7 +80,7 @@ div.bounding-box {
     width: 100%;
 }
 
-/* Individual flex containers for each card */
+/* stying for the individual cards - the stuff INSIDE the indivudal flex containers*/
 
 div.card-container {
     border: 2px dashed var(--white);
@@ -100,25 +101,14 @@ div.card-header {
     background-color: #333337;
     border-radius: 8px;
     height: fit-content;
-    /* flex: 0 0 75%; */
     width: 75%;
     margin-top: -1.5rem;
     margin-left: 3.6rem;
     padding: 0.5rem;
-    /* min-height: 100%; */
    
 }
 
 /* set the hover and transition in/out for the container and header*/
-
-/* div.card-container:hover,  
-div.card-header:hover {
-    box-shadow: inset 0px 0px 8px
-    rgb(38, 241, 255), 0 0 15px
-    rgba(38, 241, 255, 1);
-    border-radius: 10px;
-    transition: all 3s ease-in-out;
-} */
 
 div.card-container:hover,  
 div.card-container:hover div.card-header {
@@ -128,25 +118,6 @@ div.card-container:hover div.card-header {
     border-radius: 10px;
     transition: all 3s ease-in-out;
 }
-
-/* stying for the individual cards - the stuff INSIDE the indivudal flex containers*/
-
-/* div.card {
-    padding-top: 0.5rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    padding-bottom: 1rem;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    flex: 1 0 100%;
-    min-height: 100%;
-
-} */
-
-/* div.card p {
-    margin: 1rem;
-} */
 
 /* styling for code snippets */
 
