@@ -1,6 +1,13 @@
 :root {
     --white: rgb(255,255,255);
     --aqua: rgb(0,255,255);
+    --bright-blue: rgb(0, 255, 179);
+    --dark-blue: rgb(6, 40, 77);
+}
+
+::selection {
+    background-color: var(--bright-blue);
+    color: var(--dark-blue);
 }
 
 * {
@@ -36,6 +43,7 @@ section.contents {
     flex-direction: row;
     justify-content: center;
     align-content: center;
+    margin: 0.75rem;
 }
 
 /* Individual flex containers for each card */
@@ -46,6 +54,7 @@ div.card-container {
     flex: 1 0 100%;
     width: 100%;
     border-radius: 2px;
+    margin-bottom: 1rem;
     padding: 1rem;
     height: auto;
 }
@@ -62,7 +71,6 @@ div.card-header {
     margin-left: 3rem;
     padding-left: 5%;
     padding-right: 5%;
-    text-align: center;
 }
 
 /* set the hover and transition in/out for the container and header*/
@@ -89,7 +97,6 @@ div.card p {
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
-
 
 /* styling for code snippets */
 
