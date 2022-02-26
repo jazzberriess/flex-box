@@ -33,30 +33,36 @@ body {
     background-color: #333337;
     color: rgb(0,191,255);
     margin: 0;
+    line-height: 1.5rem;
 }
 
 /* set the flex for the entire page that encloses the individual flex containers */
 
 section.contents {
+    /* Just so I can see the bounding edges - border: 1px solid yellow; */
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
-    align-content: center;
-    margin: 0.75rem;
+    align-items: stretch;
+    
+}
+
+div.bounding-box {
+    /* Just so I can see the bounding edges - border: 2px solid cyan; */
+    flex: 1 0 100%;
+    /* max-height: 100%; */
+    margin-bottom: 4rem;
+    width: 100%;
 }
 
 /* Individual flex containers for each card */
 
 div.card-container {
     border: 2px dashed var(--white);
-    position: relative;
-    flex: 1 0 100%;
-    width: 100%;
     border-radius: 2px;
-    margin-bottom: 1rem;
-    padding: 1rem;
-    height: auto;
+    margin: 1rem;
+    min-height: 100%;
 }
 
 /* card titles */
@@ -66,7 +72,6 @@ div.card-header {
     background-color: #333337;
     border-radius: 8px;
     width: 75%;
-    position:absolute;
     margin-top: -3.5rem;
     margin-left: 3rem;
     padding-left: 5%;
@@ -87,27 +92,28 @@ div.card-header:hover {
 /* stying for the individual cards - the stuff INSIDE the indivudal flex containers*/
 
 div.card {
-    border-style: solid 2px;
     padding-left: 5%;
     padding-right: 5%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 
-}
-
-div.card p {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
 }
 
 /* styling for code snippets */
 
 pre {
+    /* Just so I can see the bounding edges - border: 2px solid hotpink; */
     background: linear-gradient(#333284, #000000);
     color:aliceblue;
     border-radius: 3px;
-    max-height: 300px;
+    flex: 1;
+    align-items: center;
+    
 /* thank you stackoverflow for this soulution to wrap the code snippet within its container */
         white-space: pre-wrap;
         word-break: keep-all;
+     
 }
 
 footer {
@@ -120,7 +126,7 @@ footer {
 /* Make the website responsive for smaller screens with a media query */
 
 @media screen and (min-width: 768px){
-    .card-container{
+    .bounding-box{
         flex-grow: 1;
         flex-shrink: 0;
          flex-basis: 50%;
@@ -130,7 +136,7 @@ footer {
 
 @media screen and (min-width: 992px){
 
-    .card-container{
+    .bounding-box{
         flex-grow: 1;
         flex-shrink: 0;
         flex-basis: 33%;
