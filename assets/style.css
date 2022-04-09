@@ -17,7 +17,7 @@
 }
 
 html {
-    font-size: 14px;
+    font-size: 1rem;
     font-family: sans-serif;
 }
 
@@ -133,14 +133,15 @@ pre.code-snippet {
     flex-direction: row;
     flex: 1 0 90%;
     align-items: center;
-    /* min-height: 300px; */
-    /* flex: 1;
-    align-items: space-evenly; */
     
 /* thank you stackoverflow for this soulution to wrap the code snippet within its container */
         white-space: pre-wrap;
         word-break: keep-all;
      
+}
+
+code {
+    margin: 0.75rem;
 }
 
 footer {
